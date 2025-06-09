@@ -180,3 +180,323 @@ function checkWinner(team1, team2) {
 
 console.log(checkWinner(avgDolphins, avgKoalas));
 */
+
+/*
+// Arrays
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+
+const friends = [friend1, friend2, friend3];
+console.log(friends);
+
+// const years = new Array(1991, 2006, 2025);
+
+console.log(friends[0]);
+console.log(friends[1]);
+
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = 'Jay';  // Array are not primitive, hence we can mutate them.
+console.log(friends);
+// friends = ['Bhavya', 'Ahir'];   //This gets error as this is illegal
+
+const bhavya = ['Bhavya', 'Ahir', 2025 - 2006, 'student', friends];
+console.log(bhavya);
+
+// Exercise
+function calcAge(birthYear) {
+    return 2025 - birthYear;
+}
+
+const years = [1990, 2001, 2006, 2008];
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+
+console.log(age1, age2, age3);
+
+const ages = [calcAge(years[0]), calcAge(years[1]), calcAge(years[years.length - 1])];
+console.log(ages);
+*/
+
+/*
+// Array Methods/Operations
+const friend1 = 'Michael';
+const friend2 = 'Steven';
+const friend3 = 'Peter';
+const friends = [friend1, friend2, friend3];
+
+//Add Elements
+const newLength = friends.push('Jay');  // Adds element to the last
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+//Remove Elements
+friends.pop();  // Remove the last element of array
+const popped = friends.pop();
+console.log(friends);
+console.log(popped);
+
+friends.shift();  // Remove the first element of array
+console.log(friends);
+
+// Check for an existing element in array
+console.log(friends.indexOf('Michael'));
+console.log(friends.indexOf('Bob'));
+
+friends.push(23);
+console.log(friends.includes('Steven'));
+console.log(friends.includes('Peter'));
+console.log(friends.includes('23'));
+*/
+
+/*
+// Assignment - Introduction to Arrays
+console.log("Assignment (Introduction to Arrays) Solution Here.");
+
+const indiaPopulation = 1436.8;
+const chinaPopulation = 1441;
+const russiaPopulation = 146;
+const finlandPopulation = 33;
+
+const populations = [indiaPopulation, chinaPopulation, russiaPopulation, finlandPopulation];
+console.log(populations);
+
+console.log(populations.length === 4);
+
+const percentageOfWorld = population => population / 79;
+const percentages = [percentageOfWorld(populations[0]), percentageOfWorld(populations[1]), percentageOfWorld(populations[2]), percentageOfWorld(populations[3])];
+console.log(percentages);
+*/
+
+/*
+//Assignment - Basic Array Operations
+console.log('Assignment(Basic Array Operations) Solution Here.');
+
+const neighbours = ['Bhutan', 'Bangladesh', 'China', 'Pakistan', 'Afghanistan', 'Sri Lanka'];
+console.log(neighbours);
+
+neighbours.push('Utopia');
+console.log(neighbours);
+
+neighbours.pop();
+console.log(neighbours);
+
+if (neighbours.includes('Germany') !== true) {
+    console.log("Probably not a central European country :D");
+}
+
+const indexCountry = neighbours.indexOf('China');
+neighbours[indexCountry] = 'Tibet';
+console.log(neighbours);
+*/
+
+/*
+//Coding Challenge - 2
+console.log('Coding Challenge - 2 Solution here.');
+
+function calcTip(billValue) {
+    if (billValue >= 50 && billValue <= 300) {
+        return (billValue * 15) / 100;
+    } else {
+        return (billValue * 20) / 100;
+    }
+}
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[bills.length - 1])];
+
+console.log(bills);
+console.log(tips);
+
+const total = [bills[0] + tips[0], bills[1] + tips[1], bills[bills.length - 1] + tips[tips.length - 1]];
+console.log(total);
+*/
+
+/*
+//Objects
+// const bhavyaArray = [
+//     'Bhavya',
+//     'Ahir',
+//     2025 - 2006,
+//     'student',
+//     ['Michael', 'Peter', 'Steven']
+// ]
+
+const bhavya = {
+    firstName: 'Bhavya',
+    lastName: 'Ahir',
+    age: 2025 - 2006,
+    job: 'student',
+    friends: ['Michael', 'Peter', 'Steven']
+}
+console.log(bhavya);
+console.log(bhavya.lastName);  // dot notation
+console.log(bhavya['lastName']);  //We can use an expression instead of 'lastName' here
+
+const nameKey = 'Name';
+
+console.log(bhavya['first' + nameKey]);
+console.log(bhavya['last' + nameKey]);
+
+// console.log(bhavya.'last' + nameKey);  // Wont work :(
+
+const interestedIn = prompt('What do you want to know about Bhavya? Choose between firstName, lastName, age, job, and friends');
+// console.log(bhavya.interestedIn);  //not working
+console.log(bhavya[interestedIn]);
+
+if (bhavya[interestedIn]) {
+    console.log(bhavya[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends.');
+}
+
+bhavya.location = 'India';
+bhavya['social'] = '@bhavyaahir';
+console.log(bhavya);
+
+//Challenge
+console.log(`${bhavya.firstName} has ${bhavya['friends'].length} friends, and his best friend is ${bhavya.friends[0]}`);
+*/
+
+/*
+// Object Methods
+const bhavya = {
+    firstName: 'Bhavya',
+    lastName: 'Ahir',
+    birthYear: 2006,
+    job: 'student',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    // calcAge: function(birthYear) {
+    //     return 2025 - birthYear;
+    // }
+
+    // calcAge: function() {
+    //     console.log(this);
+    //     return 2025 - this.birthYear;
+    // }
+
+    calcAge: function() {
+        this.age = 2025 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function() {
+        return `${bhavya.firstName} is a ${bhavya.age}-years old ${bhavya.job}, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+    }
+};
+
+console.log(bhavya.calcAge());
+// console.log(bhavya['calcAge'](bhavya.birthYear));
+console.log(bhavya.age);
+
+//Challenge
+
+// function checkDriversLicense(boolValue) {
+//     if (boolValue === true) {
+//         return "has a Driver's License.";
+//     } else {
+//         return "do not have a Driver's License.";
+//     }
+// }
+
+// console.log(`${bhavya.firstName} is a ${bhavya.age}-years old ${bhavya.job}, and he ${checkDriversLicense(bhavya.hasDriversLicense)}`);
+console.log(bhavya.getSummary());
+*/
+
+/*
+//Assignment - Introduction to Objects
+console.log('Assignment(Introduction to Objects) Solution here.');
+
+const myCountry = {
+    country: 'India',
+    capital: 'Delhi',
+    language: 'Hindi',
+    population: 1436.8,
+    neighbours: ['Bhutan', 'Bangladesh', 'China', 'Pakistan', 'Afghanistan', 'Sri Lanka']
+}
+console.log(myCountry);
+*/
+
+/*
+//Assignment - Dot vs. Bracket Notation
+console.log('Assignment(Dot vs. Bracket Notation) Solution Here.');
+const myCountry = {
+    country: 'India',
+    capital: 'Delhi',
+    language: 'Hindi',
+    population: 1436.8,
+    neighbours: ['Bhutan', 'Bangladesh', 'China', 'Pakistan', 'Afghanistan', 'Sri Lanka']
+}
+
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}.`);
+
+myCountry.population = myCountry.population + 2;
+console.log(myCountry);
+
+myCountry['population'] = myCountry['population'] - 2;
+console.log(myCountry);
+*/
+
+/*
+//Assignment - Object Methods
+console.log("Assignment(Object Methods) Solution here.");
+const myCountry = {
+    country: 'India',
+    capital: 'Delhi',
+    language: 'Hindi',
+    population: 1436.8,
+    neighbours: ['Bhutan', 'Bangladesh', 'China', 'Pakistan', 'Afghanistan', 'Sri Lanka'],
+
+    describe: function() {
+        console.log(`${this.country} has ${this.population} million ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`)
+    },
+
+    checkIsland: function() {
+        this.isIsland = (this.neighbours.length === 0);
+        return this.isIsland;
+    }
+};
+
+myCountry.describe();
+console.log(myCountry.checkIsland());
+*/
+
+/*
+//Coding Challenge - 3
+const markData = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function() {
+        this.markBMI = this.mass / (this.height ** 2);
+        return this.markBMI;
+    }
+};
+
+const johnData = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function() {
+        this.johnBMI = this.mass / (this.height ** 2);
+        return this.johnBMI;
+    }
+};
+
+if (markData.markBMI > johnData.johnBMI) {
+    console.log(`${markData.firstName}'s BMI (${markData.calcBMI()}) is higher than ${johnData.firstName}'s (${johnData.calcBMI()})!`);
+} else {
+    console.log(`${johnData.firstName}'s BMI (${johnData.calcBMI()}) is higher than ${markData.firstName}'s (${markData.calcBMI()})!`);
+}
+*/
