@@ -500,3 +500,149 @@ if (markData.markBMI > johnData.johnBMI) {
     console.log(`${johnData.firstName}'s BMI (${johnData.calcBMI()}) is higher than ${markData.firstName}'s (${markData.calcBMI()})!`);
 }
 */
+
+/*
+//Loops
+// console.log('Lifting weights repetition 1!');
+// console.log('Lifting weights repetition 2!');
+// console.log('Lifting weights repetition 3!');
+// console.log('Lifting weights repetition 4!');
+// console.log('Lifting weights repetition 5!');
+// console.log('Lifting weights repetition 6!');
+// console.log('Lifting weights repetition 7!');
+// console.log('Lifting weights repetition 8!');
+// console.log('Lifting weights repetition 9!');
+// console.log('Lifting weights repetition 10!');
+
+// for loop keeps running while condition is TRUE
+for(let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}!`);
+}
+*/
+
+/*
+const bhavyaArray = [
+    'Bhavya',
+    'Ahir',
+    2025 - 2006,
+    'student',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const types = [];
+
+for(let i = 0; i < bhavyaArray.length; i++) {
+    console.log(bhavyaArray[i], typeof bhavyaArray[i]);
+
+    //Filling types array
+    // types[i] = typeof bhavyaArray[i];
+    types.push(typeof bhavyaArray[i]);
+}
+
+console.log(types);
+
+const years = [1991, 2001, 2006, 2020];
+const ages = [];
+
+for (let j = 0; j < years.length; j++) {
+    ages.push(2025 - years[j]);
+}
+console.log(ages);
+*/
+
+/*
+//continue and break
+const bhavyaArray = [
+    'Bhavya',
+    'Ahir',
+    2025 - 2006,
+    'student',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const types = [];
+
+console.log('----Only String----');
+for (let i = 0; i < bhavyaArray.length; i++) {
+    if(typeof bhavyaArray[i] !== 'string') continue;
+
+    // types.push(typeof bhavyaArray[i]);
+    console.log(bhavyaArray[i], typeof bhavyaArray[i]);
+}
+// console.log(types);
+
+console.log('----Break with number----')
+for (let i = 0; i < bhavyaArray.length; i++) {
+    if(typeof bhavyaArray[i] === 'number') break;
+
+    // types.push(typeof bhavyaArray[i]);
+    console.log(bhavyaArray[i], typeof bhavyaArray[i]);
+}
+*/
+
+/*
+//while loop
+let rep = 1;
+while (rep <= 10) {
+    console.log(`Lifting weights repetition ${rep}`);
+    rep++;
+}
+*/
+
+/*
+//Assignment - Iteration: The for Loop
+for (let i = 1; i <= 50; i++) {
+    console.log(`Voter number ${i} is currently voting.`);
+}
+ */
+
+/*
+//Assignment - Looping Arrays, Breaking and Continuing
+const indiaPopulation = 1436.8;
+const chinaPopulation = 1441;
+const russiaPopulation = 146;
+const finlandPopulation = 33;
+
+const populations = [indiaPopulation, chinaPopulation, russiaPopulation, finlandPopulation];
+const percentageOfWorld = population => population / 79;
+const percentages2 = [];
+
+for (let i = 0; i < populations.length; i++) {
+    percentages2.push(percentageOfWorld(populations[i]));
+}
+// console.log(percentages2);
+ */
+
+/*
+//Assignment - Looping Backwards and Loops in Loops
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']];
+
+for(let i = 0; i < listOfNeighbours.length; i++){
+    console.log(`Neighbouring Countries list - ${i+1}`);
+    for(let j = 0; j < listOfNeighbours[i].length; j++){
+        console.log(`Neighbour - ${listOfNeighbours[i][j]}`);
+    }
+}
+ */
+
+
+// Coding Challenge - 4
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+function calcTip(billValue) {
+    if (billValue >= 50 && billValue <= 300) {
+        return (billValue * 15) / 100;
+    } else {
+        return (billValue * 20) / 100;
+    }
+}
+
+for (let i = 0; i < bills.length; i++) {
+    tips.push(calcTip(bills[i]));
+    totals.push(tips[i] + bills[i]);
+}
+
+console.log(tips);
+console.log(totals);
