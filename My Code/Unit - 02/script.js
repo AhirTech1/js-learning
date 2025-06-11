@@ -646,3 +646,15 @@ for (let i = 0; i < bills.length; i++) {
 
 console.log(tips);
 console.log(totals);
+
+//Bonus Challenge
+function calcAverage(arr){
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    let avg = sum / arr.length;
+    console.log(`The average of all the total bills is ${avg}`);
+}
+
+calcAverage(totals);
