@@ -1,7 +1,7 @@
 // Remember, we're going to use strict mode in all scripts now!
 'use strict';
 
-
+/*
 //Problem - 1
 const temperatures = [3, -2, -6, -1, 'error', 9, 13, 17, 15, 14, 9, 5];
 
@@ -33,3 +33,18 @@ function calcAmpNew (t1, t2) {
 const arr1 = [3,6,2,7,9,-12,6,-5];
 const arr2 = [4,8,2,-8,-2,0,-3,6,7];
 console.log(calcAmpNew(arr1, arr2));
+*/
+
+
+//Coding Challenge - 1
+const arr1 = [17, 21, 23];
+const arr2 = [12, 5, -5, 0, 4];
+
+function printForecast (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        console.log(`...${arr[i]} degree celsius in ${i+1} days...`);
+    }
+}
+
+printForecast(arr1);
+printForecast(arr2);
