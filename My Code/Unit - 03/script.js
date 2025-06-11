@@ -35,7 +35,7 @@ const arr2 = [4,8,2,-8,-2,0,-3,6,7];
 console.log(calcAmpNew(arr1, arr2));
 */
 
-
+/*
 //Coding Challenge - 1
 const arr1 = [17, 21, 23];
 const arr2 = [12, 5, -5, 0, 4];
@@ -48,3 +48,4 @@ function printForecast (arr) {
 
 printForecast(arr1);
 printForecast(arr2);
+*/
