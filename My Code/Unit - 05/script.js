@@ -1,26 +1,28 @@
 'use strict';
-/*
-console.log(document.querySelector('.message').textContent);
-document.querySelector('.message').textContent = 'Correct Number!!';
-
-document.querySelector('.number').textContent = 13;
-document.querySelector('.score').textContent = 15;
-
-document.querySelector('.guess').value = 15;
-console.log(document.querySelector('.guess').value);
-*/
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;  // is called state variable, cuz it is part of the application state
 let highScore = 0;
 
+//Adding Sounds
+const clickSound = new Audio('click.mp3');
+const clickSound2 = new Audio('click2.mp3');
+const successSound = new Audio('success.mp3');
+const errorSound = new Audio('error.mp3');
+
 document.querySelector('.check').addEventListener('click', function() {
+    clickSound.play();
     const guess = Number(document.querySelector('.guess').value);
 
     if(!guess) {
+        errorSound.play();
         document.querySelector('.message').textContent = "No number !?";
+    } else if (guess < 1 || guess > 20) {
+        errorSound.play();
+        document.querySelector('.message').textContent = "Enter a number between 1 and 20!";
     } else {
         if (guess === secretNumber) {
+            successSound.play();
             document.querySelector('.message').textContent = "Correct Number !! :)";
             document.querySelector('.number').textContent = guess;
 
@@ -32,13 +34,13 @@ document.querySelector('.check').addEventListener('click', function() {
             }
             document.querySelector('.highscore').textContent = highScore;
         } else {
-            if (guess <= secretNumber) {
+            if ((guess < secretNumber) && (guess > 0)) {
                 if ((guess === secretNumber - 1) || (guess === secretNumber - 2)) {
                     document.querySelector('.message').textContent = "Little Low !";
                 } else {
                     document.querySelector('.message').textContent = "Too Low :(";
                 }
-            } else if (guess >= secretNumber) {
+            } else if ((guess > secretNumber) && (guess < 20)) {
                 if ((guess === secretNumber + 1) || (guess === secretNumber + 2)) {
                     document.querySelector('.message').textContent = "Little High !";
                 } else {
@@ -56,6 +58,7 @@ document.querySelector('.check').addEventListener('click', function() {
 });
 
 document.querySelector('.again').addEventListener('click', function() {
+    clickSound2.play();
     secretNumber = Math.trunc(Math.random() * 20) + 1;
     score = 20;
     document.querySelector('.message').textContent = "Start Guessing...";
