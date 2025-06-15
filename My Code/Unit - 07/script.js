@@ -473,6 +473,7 @@ buttons.forEach(button => {
             // Local multiplayer
             isComputerGame = false;
             gameMode = 'local';
+            playing = true;
             setupLocalMultiplayer();
         } else if (btnClass === 'btn2') {
             // Vs computer
